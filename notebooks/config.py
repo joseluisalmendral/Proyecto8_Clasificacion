@@ -31,6 +31,7 @@ sys.path.append(PROJECT_ROOT)
 from src.eda import soporte_preprocesamiento as sup_prep
 from src.eda import soporte_nulos as sup_nul
 from src.eda import soporte_outliers as sup_out
+from src.clasificacion import soportefeaturescaling as sup_fea
 
 ##aplicar configuraciones
 #------------------------------------------------------------------------
