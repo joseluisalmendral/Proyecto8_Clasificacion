@@ -19,12 +19,18 @@ import warnings
 # modificar el path
 # -----------------------------------------------------------------------
 import sys
-sys.path.append("../")
+import os
+
+# Añade la ruta raíz del proyecto al sys.path
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(PROJECT_ROOT)
+
 
 # importar funciones de soporte
 # -----------------------------------------------------------------------
-#from src import categoria.soporte as sup_xxx
-
+from src.eda import soporte_preprocesamiento as sup_prep
+from src.eda import soporte_nulos as sup_nul
+from src.eda import soporte_outliers as sup_out
 
 ##aplicar configuraciones
 #------------------------------------------------------------------------
