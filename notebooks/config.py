@@ -2,6 +2,7 @@
 # -----------------------------------------------------------------------
 import pandas as pd
 import numpy as np
+import pickle
 
 # Visualizaciones
 # -----------------------------------------------------------------------
@@ -32,6 +33,7 @@ from src.eda import soporte_preprocesamiento as sup_prep
 from src.eda import soporte_nulos as sup_nul
 from src.eda import soporte_outliers as sup_out
 from src.clasificacion import soportefeaturescaling as sup_fea
+from src.eda import soporte_encoding2 as sup_encod
 
 ##aplicar configuraciones
 #------------------------------------------------------------------------

@@ -46,6 +46,8 @@ class FeatureScaling:
         # Guardar el modelo
         with open(f'{path}{transformer_name}.pkl', 'wb') as f:
             pickle.dump(scaler, f)
+
+            
         return pd.DataFrame(datos_escalados, columns=self.lista_numericas, index=self.dataframe.index)
 
     def min_max_scaler(self):
