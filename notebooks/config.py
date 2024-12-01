@@ -13,6 +13,11 @@ import matplotlib.pyplot as plt
 # -----------------------------------------------------------------------
 from tqdm import tqdm
 
+# Machine Learning
+# -----------------------------------------------------------------------
+from sklearn.model_selection import train_test_split,GridSearchCV
+
+
 # Gestionar los warnings
 # -----------------------------------------------------------------------
 import warnings
@@ -34,6 +39,7 @@ from src.eda import soporte_nulos as sup_nul
 from src.eda import soporte_outliers as sup_out
 from src.clasificacion import soportefeaturescaling as sup_fea
 from src.eda import soporte_encoding2 as sup_encod
+from src.clasificacion import soporte_modelos_clasificacion as sup_models
 
 ##aplicar configuraciones
 #------------------------------------------------------------------------
