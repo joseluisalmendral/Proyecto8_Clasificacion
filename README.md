@@ -66,7 +66,7 @@ Proyecto8-Prediccion_Abandono_Empleados/
 
 ## 🧾 Conclusiones
 
-Las conclusiones específicas del análisis y respuestas que respondes a las preguntas planteadas inicialmente, se encuentran en el archivo `notebooks/iteracion1/4_predicciones.ipynb`.
+Las conclusiones específicas del análisis y respuestas que respondes a las preguntas planteadas inicialmente, se encuentran en el archivo [notebooks/iteracion1/4_predicciones.ipynb](https://github.com/joseluisalmendral/Proyecto8_Clasificacion/blob/master/notebooks/iteracion1/4_predicciones.ipynb).
 
 ## 🛠️ Próximos Pasos
 
