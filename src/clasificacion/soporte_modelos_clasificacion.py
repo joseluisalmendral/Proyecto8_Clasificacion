@@ -60,7 +60,7 @@ class AnalisisModelosClasificacion:
         }
         self.resultados = {nombre: {"mejor_modelo": None, "pred_train": None, "pred_test": None} for nombre in self.modelos}
 
-    def ajustar_modelo(self, modelo_nombre, param_grid=None, random_state=42, devolver_objeto=False, entrenamiento_final=False):
+    def ajustar_modelo(self, modelo_nombre, param_grid=None, scoring="accuracy", random_state=42, devolver_objeto=False, entrenamiento_final=False):
         """
         Ajusta el modelo seleccionado con GridSearchCV.
         Si entrenamiento_final=True, el modelo se entrena con todo el conjunto de datos (X, y).
@@ -129,7 +129,7 @@ class AnalisisModelosClasificacion:
             
         else:
             # Ajuste del modelo con GridSearchCV
-            grid_search = GridSearchCV(estimator=modelo, param_grid=param_grid, cv=5, scoring='accuracy', n_jobs=-1, verbose=1)
+            grid_search = GridSearchCV(estimator=modelo, param_grid=param_grid, cv=8, scoring=scoring, n_jobs=-1, verbose=1)
             grid_search.fit(X_datos, y_datos)
             print(f"El mejor modelo es {grid_search.best_estimator_}")
             self.resultados[modelo_nombre]["mejor_modelo"] = grid_search.best_estimator_
@@ -194,6 +194,7 @@ class AnalisisModelosClasificacion:
 
         # Métricas para conjunto de entrenamiento
         metricas_train = {
+            'prediction': 'train',
             "accuracy": accuracy_score(self.y_train, pred_train),
             "precision": precision_score(self.y_train, pred_train, average='weighted', zero_division=0),
             "recall": recall_score(self.y_train, pred_train, average='weighted', zero_division=0),
@@ -206,6 +207,7 @@ class AnalisisModelosClasificacion:
 
         # Métricas para conjunto de prueba
         metricas_test = {
+            'prediction': 'test',
             "accuracy": accuracy_score(self.y_test, pred_test),
             "precision": precision_score(self.y_test, pred_test, average='weighted', zero_division=0),
             "recall": recall_score(self.y_test, pred_test, average='weighted', zero_division=0),
